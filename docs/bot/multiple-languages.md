@@ -1,75 +1,73 @@
 ---
 id: multiple-languages
-title: Multiple languages
+title: Multiple Languages
 ---
 
 ## Introduction
 
-You can have one bot for many langauges as you can translation all the messages presented in bot building interface. You just have to follow few guidelines.
+You can create a single bot that supports multiple languages by translating all the messages within the bot-building interface. To achieve this, you need to follow a few simple guidelines.
 
-## Translating bot messages
+## Translating Bot Messages
 
-To start translating bot messages first you have to write messages to user a specific way. See [text messages](text.md#text-message)
+To start translating bot messages, you must first write the messages in a specific format. Refer to the [Text Messages](text.md#text-message) section for more details.
 
-E.g `{welcome_message__Welcome message}` our message identifier would be  `welcome_message`
+For example, if your message is `{welcome_message__Welcome message}`, the message identifier would be `welcome_message`.
 
-## Translations groups
+## Translation Groups
 
-Next thing you have to do is to create a translation group. Navigate to
-> System configuration -> Translations groups
+The next step is to create a translation group. Navigate to:
+> **System Configuration -> Translation Groups**
 
-Just create a translation group.
+Here, you can create a new translation group.
 
 :::tip
-Besides creating a translation group itself you can also have custom photo and bot nick per language.
+In addition to creating a translation group, you can also customize the bot's photo and nickname for each language.
 :::
 
-## Setting translation group
+## Setting a Translation Group
 
-To set translation group you have to edit `Department` and in `Bot configuration` tab just choose that group.
+To assign a translation group, edit the `Department` settings and, under the `Bot Configuration` tab, select the desired translation group.
 
-## Set translation for our message
+## Translating Messages
 
-When you click on translation group you will be presented with `Translations items`. Window should look like this once you click on translation group title.
+Once you click on a translation group, you will see a list of `Translation Items`. The window should look like this:
 
 ![](/img/bot/translations-groups.png)
 
-Now we just create a new translated message.
+From here, you can create a new translated message:
 
 ![](/img/bot/translation-item.png)
 
-## Translating automatically items from Translation items
+## Automatic Translation of Translation Items
 
-This feature allows to translate automatically translation items if we don't find user language translation in translation item. It's like fine grain control where to use automatic translations.
+This feature allows you to automatically translate items if a translation for the user's language is not found in the `Translation Items`. It provides fine-grained control over which messages should use automatic translations.
 
-To translate specific messages within `Translation items` you have to check.
-
-> If translation is not found use translation service
+To enable automatic translations for specific messages within `Translation Items`, check the following option:
+> **If translation is not found, use translation service**
 
 ![](/img/bot/translation-auto.png)
 
-For it to work you have to define what language is the default language in the `Bot individualization` group
-
-> For automatic translations we have to know what is the main bot language. From this language we will translate bot messages.
+For this to work, you must define the default language in the `Bot Individualization` group:
+> **For automatic translations, we need to know the bot's main language. This will be the source language for translating bot messages.**
 
 ![](/img/bot/bot-translation-group.png)
 
-Automatic translation service has to be configured.
+Additionally, the automatic translation service must be properly configured.
 
-## Translating automatically all trigger
+## Automatic Translation of All Triggers
 
-Most common triggers used to send information to user have `Automatic translations` option. Only triggers with selected option will be automatically translated.
+Most common triggers used to send information to users have an `Automatic Translation` option. Only triggers with this option enabled will be automatically translated.
 
 ![](/img/bot/translate-trigger.png)
 
-For it to work you have to have configured automatic translations service.
+For this feature to work, the automatic translation service must be configured.
 
-* **If you are translating all trigger response you should not use translation identifiers**
-* To speed up performance I suggest enable cache in `Automatic Translations` configuration window.
+:::note
+- **If you are translating all trigger responses, you should not use translation identifiers.**
+- To improve performance, enable caching in the `Automatic Translations` configuration window.
+:::
 
-## Required permissions
+## Required Permissions
 
-The only required permission to work with bot translations are 
-
-> 'lhbot','use'
-
+The only permission required to work with bot translations is:
+> **'lhbot', 'use'**
